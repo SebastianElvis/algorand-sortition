@@ -16,7 +16,7 @@ func TestAll(t *testing.T) {
 	seed := []byte{1, 2, 3, 4, 5}
 	role := []byte{7, 7, 7, 7, 7, 7, 7}
 	threshold := int64(40)
-	balance := int64(3)
+	balance := int64(11)
 	total := int64(100)
 
 	hash, proof, j := Sortition(sk, seed, threshold, role, balance, total)
