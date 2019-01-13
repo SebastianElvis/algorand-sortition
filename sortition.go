@@ -8,8 +8,6 @@ func Sortition(sk vrf.PrivateKey, seed []byte, threshold int64, role []byte, bal
 	hash, proof := sk.Prove(append(seed, role...))
 	p := float64(threshold) / float64(total)
 	j := int64(0)
-
-	// get the normalized hash value [0, 1)
 	normalizedHash := normalizeHash(hash)
 
 	// main loop for computing j

@@ -7,7 +7,7 @@ import (
 
 func factorial(n int64) int64 {
 	if n <= 1 {
-		return 1
+		return int64(1)
 	}
 	return n * factorial(n-1)
 }
@@ -16,9 +16,7 @@ func factorial(n int64) int64 {
 // Assume you flip a coin for w times. Flip it with the possibility of the front face = p
 // B(k; w, p) is the probability that front face occurs for exactly k times
 func b(k, w int64, p float64) float64 {
-	comb := float64(factorial(w) /
-		factorial(k) /
-		factorial(w-k))
+	comb := float64(factorial(w) / factorial(k) / factorial(w-k))
 	px := math.Pow(p, float64(k))
 	qnx := math.Pow(1.0-p, float64(w-k))
 	return comb * px * qnx
